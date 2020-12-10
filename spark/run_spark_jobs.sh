@@ -19,7 +19,7 @@ hfs -put ./"Employment Combined - State - Daily.csv"
 cd ../../../../spark
 
 echo "running spark job 1: Join COVID and Employment Data from Harvard Economic Tracker"
-spark-submit --conf spark.pyspark.python=/share/apps/python/3.6.5/bin/python ./covid_employment_join.py /user/{net_id}/"COVID - State - Daily.csv" 
+spark-submit --conf spark.pyspark.python=/share/apps/python/3.6.5/bin/python ./joined_covid_employment.py /user/{net_id}/"COVID - State - Daily.csv" 
 /user/{net_id}/"Employment Combined - State - Daily.csv"
 
 cd ../data/spark_datasets
