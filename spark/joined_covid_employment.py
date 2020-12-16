@@ -25,6 +25,7 @@ sorted_keys = joined_keys.sortByKey()
 # Reformat the output as comma separated
 joined_format = sorted_keys.map(lambda line: line[0]+','+line[1][0]+','+line[1][1])
 
+# Reformat date to YYYY-MM-DD
 date_reformat = joined_format.map(lambda line: '-'.join(line.split(",")[:3])+','+",".join(line.split(",")[3:]))
 
 # Save as textFile
