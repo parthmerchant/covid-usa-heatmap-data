@@ -23,7 +23,9 @@ joined_keys = covid_keys.join(employment_keys)
 sorted_keys = joined_keys.sortByKey()
 
 # Reformat the output as comma separated
-final_format = sorted_keys.map(lambda line: line[0]+','+line[1][0]+','+line[1][1])
+joined_format = sorted_keys.map(lambda line: line[0]+','+line[1][0]+','+line[1][1])
+
+date_reformat = joined_format.map(lambda line: '-'.join(line.split(",")[:3])+','+",".join(line.split(",")[3:]))
 
 # Save as textFile
-final_format.saveAsTextFile("covid_employment.out")
+date_reformat.saveAsTextFile("covid_employment4.out")
